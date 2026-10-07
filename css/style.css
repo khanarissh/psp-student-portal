@@ -1,0 +1,767 @@
+/* =====================================================
+   PSP STUDENT PORTAL
+   BLACK + PURPLE + WHITE THEME
+   GLOBAL STYLESHEET
+   ===================================================== */
+
+:root {
+    --black: #08080c;
+    --black-soft: #0d0d12;
+    --dark: #111116;
+    --dark-card: #17171e;
+    --dark-card-2: #1d1d26;
+
+    --purple: #8b5cf6;
+    --purple-dark: #6d28d9;
+    --purple-light: #a78bfa;
+    --purple-soft: rgba(139, 92, 246, 0.12);
+
+    --white: #ffffff;
+    --text: #f5f5f5;
+    --text-soft: #e4e4e7;
+    --muted: #a1a1aa;
+
+    --border: rgba(139, 92, 246, 0.22);
+    --border-soft: rgba(255, 255, 255, 0.08);
+
+    --success: #22c55e;
+    --danger: #ef4444;
+
+    --radius: 16px;
+    --radius-small: 10px;
+
+    --shadow:
+        0 15px 40px rgba(0, 0, 0, 0.45);
+
+    --purple-shadow:
+        0 0 30px rgba(139, 92, 246, 0.18);
+}
+
+
+/* =====================================================
+   RESET
+   ===================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(139, 92, 246, 0.14),
+            transparent 34%
+        ),
+        radial-gradient(
+            circle at bottom left,
+            rgba(109, 40, 217, 0.10),
+            transparent 30%
+        ),
+        var(--black);
+
+    color: var(--text);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   SELECTION
+   ===================================================== */
+
+::selection {
+    background: var(--purple);
+    color: white;
+}
+
+
+/* =====================================================
+   CONTAINER
+   ===================================================== */
+
+.container {
+    position: relative;
+    width: 100%;
+}
+
+
+/* =====================================================
+   HEADINGS
+   ===================================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 0;
+
+    color: var(--white);
+
+    font-weight: 700;
+
+    line-height: 1.25;
+}
+
+h1 {
+    font-size: 2.2rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+}
+
+h3 {
+    font-size: 1.4rem;
+}
+
+h4 {
+    font-size: 1.15rem;
+}
+
+
+/* =====================================================
+   TEXT
+   ===================================================== */
+
+p {
+    color: var(--text-soft);
+}
+
+label,
+.form-label {
+    color: var(--text);
+    font-weight: 600;
+}
+
+strong {
+    color: var(--purple-light);
+}
+
+.text-muted {
+    color: var(--muted) !important;
+}
+
+.form-text {
+    color: var(--muted) !important;
+}
+
+
+/* =====================================================
+   LINKS
+   ===================================================== */
+
+a {
+    color: var(--purple-light);
+
+    text-decoration: none;
+
+    transition:
+        color 0.2s ease,
+        opacity 0.2s ease;
+}
+
+a:hover {
+    color: var(--white);
+}
+
+
+/* =====================================================
+   CARDS
+   ===================================================== */
+
+.card {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(27, 27, 35, 0.96),
+            rgba(15, 15, 20, 0.96)
+        ) !important;
+
+    border: 1px solid var(--border) !important;
+
+    border-radius: var(--radius) !important;
+
+    color: var(--text);
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.45),
+        0 0 25px rgba(139, 92, 246, 0.06);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+
+    border-color:
+        rgba(139, 92, 246, 0.5) !important;
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.55),
+        0 0 35px rgba(139, 92, 246, 0.13);
+}
+
+.card-body {
+    padding: 30px;
+}
+
+
+/* =====================================================
+   BUTTONS
+   ===================================================== */
+
+.btn {
+    border-radius: var(--radius-small);
+
+    font-weight: 600;
+
+    padding: 10px 18px;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   PRIMARY BUTTON
+   ===================================================== */
+
+.btn-primary {
+    background:
+        linear-gradient(
+            135deg,
+            var(--purple),
+            var(--purple-dark)
+        ) !important;
+
+    border: none !important;
+
+    color: var(--white) !important;
+
+    box-shadow:
+        0 6px 20px rgba(139, 92, 246, 0.25);
+}
+
+.btn-primary:hover {
+    background:
+        linear-gradient(
+            135deg,
+            var(--purple-light),
+            var(--purple)
+        ) !important;
+
+    box-shadow:
+        0 9px 28px rgba(139, 92, 246, 0.42);
+}
+
+
+/* =====================================================
+   WARNING / EDIT BUTTON
+   ===================================================== */
+
+.btn-warning {
+    background: transparent !important;
+
+    border:
+        1px solid var(--purple) !important;
+
+    color: var(--purple-light) !important;
+}
+
+.btn-warning:hover {
+    background: var(--purple) !important;
+
+    border-color: var(--purple) !important;
+
+    color: var(--white) !important;
+}
+
+
+/* =====================================================
+   DANGER BUTTON
+   ===================================================== */
+
+.btn-danger {
+    background: #dc2626 !important;
+
+    border: none !important;
+
+    color: white !important;
+}
+
+.btn-danger:hover {
+    background: #b91c1c !important;
+
+    box-shadow:
+        0 7px 20px rgba(220, 38, 38, 0.25);
+}
+
+
+/* =====================================================
+   SECONDARY BUTTON
+   ===================================================== */
+
+.btn-secondary {
+    background: #24242d !important;
+
+    border:
+        1px solid #353541 !important;
+
+    color: var(--text) !important;
+}
+
+.btn-secondary:hover {
+    background: #30303a !important;
+
+    border-color:
+        rgba(139, 92, 246, 0.35) !important;
+}
+
+
+/* =====================================================
+   FORM INPUTS
+   ===================================================== */
+
+.form-control,
+.form-select {
+    width: 100%;
+
+    background: #0f0f14 !important;
+
+    border:
+        1px solid #30303a !important;
+
+    border-radius: var(--radius-small);
+
+    color: var(--white) !important;
+
+    padding: 11px 14px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.form-control::placeholder {
+    color: #71717a;
+}
+
+.form-control:hover,
+.form-select:hover {
+    border-color:
+        rgba(139, 92, 246, 0.4) !important;
+}
+
+.form-control:focus,
+.form-select:focus {
+    background: #111116 !important;
+
+    color: var(--white) !important;
+
+    border-color:
+        var(--purple) !important;
+
+    outline: none;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(139, 92, 246, 0.14) !important;
+}
+
+
+/* =====================================================
+   FILE INPUT
+   ===================================================== */
+
+input[type="file"] {
+    cursor: pointer;
+}
+
+input[type="file"]::file-selector-button {
+    background: var(--purple);
+
+    border: none;
+
+    border-radius: 7px;
+
+    color: white;
+
+    padding: 7px 12px;
+
+    margin-right: 10px;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+input[type="file"]::file-selector-button:hover {
+    background: var(--purple-dark);
+}
+
+
+/* =====================================================
+   NUMBER INPUT
+   ===================================================== */
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    opacity: 1;
+}
+
+
+/* =====================================================
+   PROFILE PICTURE
+   ===================================================== */
+
+.profile-picture {
+    width: 160px;
+    height: 160px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border:
+        4px solid var(--purple);
+
+    box-shadow:
+        0 0 0 5px
+        rgba(139, 92, 246, 0.08),
+
+        0 0 35px
+        rgba(139, 92, 246, 0.35);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.profile-picture:hover {
+    transform: scale(1.05);
+
+    box-shadow:
+        0 0 0 6px
+        rgba(139, 92, 246, 0.12),
+
+        0 0 45px
+        rgba(139, 92, 246, 0.5);
+}
+
+
+/* =====================================================
+   PROFILE PLACEHOLDER
+   ===================================================== */
+
+.profile-placeholder {
+    width: 160px;
+    height: 160px;
+
+    border-radius: 50%;
+
+    border:
+        3px solid var(--purple);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #19191f,
+            #101015
+        );
+
+    color: var(--muted);
+
+    text-align: center;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 0 30px
+        rgba(139, 92, 246, 0.2);
+}
+
+
+/* =====================================================
+   ALERTS
+   ===================================================== */
+
+.alert {
+    border-radius: 12px;
+
+    margin-bottom: 20px;
+}
+
+.alert-success {
+    background:
+        rgba(34, 197, 94, 0.12);
+
+    color: #86efac;
+
+    border:
+        1px solid
+        rgba(34, 197, 94, 0.25);
+}
+
+.alert-danger {
+    background:
+        rgba(239, 68, 68, 0.12);
+
+    color: #fca5a5;
+
+    border:
+        1px solid
+        rgba(239, 68, 68, 0.25);
+}
+
+.alert-warning {
+    background:
+        rgba(245, 158, 11, 0.12);
+
+    color: #fcd34d;
+
+    border:
+        1px solid
+        rgba(245, 158, 11, 0.25);
+}
+
+
+/* =====================================================
+   HORIZONTAL LINE
+   ===================================================== */
+
+hr {
+    border: 0;
+
+    border-top:
+        1px solid
+        rgba(255, 255, 255, 0.08);
+
+    margin: 28px 0;
+}
+
+
+/* =====================================================
+   TABLE
+   ===================================================== */
+
+.table {
+    width: 100%;
+
+    color: var(--text) !important;
+
+    background: transparent !important;
+}
+
+.table thead {
+    background: #202027;
+}
+
+.table th {
+    color: var(--purple-light);
+
+    border-color:
+        #30303a !important;
+
+    font-weight: 700;
+}
+
+.table td {
+    color: #e4e4e7;
+
+    border-color:
+        #27272f !important;
+
+    vertical-align: middle;
+}
+
+.table tbody tr {
+    transition:
+        background 0.2s ease;
+}
+
+.table tbody tr:hover {
+    background:
+        rgba(139, 92, 246, 0.05);
+}
+
+
+/* =====================================================
+   BADGES
+   ===================================================== */
+
+.badge {
+    border-radius: 8px;
+
+    padding: 6px 10px;
+
+    font-weight: 600;
+}
+
+.badge-purple {
+    background:
+        rgba(139, 92, 246, 0.15);
+
+    color: var(--purple-light);
+
+    border:
+        1px solid
+        rgba(139, 92, 246, 0.25);
+}
+
+
+/* =====================================================
+   ICON / PURPLE ACCENT
+   ===================================================== */
+
+.icon-purple {
+    color: var(--purple-light);
+
+    text-shadow:
+        0 0 15px
+        rgba(139, 92, 246, 0.4);
+}
+
+
+/* =====================================================
+   FOCUS ACCESSIBILITY
+   ===================================================== */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline:
+        2px solid var(--purple-light);
+
+    outline-offset: 3px;
+}
+
+
+/* =====================================================
+   SCROLLBAR
+   ===================================================== */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #09090b;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #4c1d95;
+
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--purple);
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 768px) {
+
+    body {
+        font-size: 15px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.25rem;
+    }
+
+    .card-body {
+        padding: 22px;
+    }
+
+    .profile-picture,
+    .profile-placeholder {
+        width: 130px;
+        height: 130px;
+    }
+
+    .btn {
+        width: 100%;
+
+        margin-bottom: 8px;
+    }
+
+    .table {
+        font-size: 14px;
+    }
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+   ===================================================== */
+
+@media (max-width: 480px) {
+
+    .card {
+        border-radius: 13px !important;
+    }
+
+    .card-body {
+        padding: 18px;
+    }
+
+    .profile-picture,
+    .profile-placeholder {
+        width: 115px;
+        height: 115px;
+    }
+
+    .form-control,
+    .form-select {
+        padding: 10px 12px;
+    }
+}
